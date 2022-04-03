@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kitchens-depl
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: kitchenservice
+  template:
+    metadata:
+      labels:
+        app: kitchenservice
+    spec:
+      containers:
+        - name: kitchenservice
+          image: tcortega/kitchenservice:latest
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: kitchens-clusterip-srv
+spec:
+  type: ClusterIP
+  selector:
+    app: kitchenservice
+  ports:
+    - name: kitchenservice
+      protocol: TCP
+      port: 80
+      targetPort: 80

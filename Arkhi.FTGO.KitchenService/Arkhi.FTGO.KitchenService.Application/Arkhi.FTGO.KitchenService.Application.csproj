@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net5.0</TargetFramework>
+        <RootNamespace>Arkhi.FTGO.KitchenService.Application</RootNamespace>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="AutoMapper" Version="11.0.1" />
+      <PackageReference Include="MassTransit" Version="8.0.1" />
+      <PackageReference Include="MassTransit.RabbitMQ" Version="8.0.1" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Arkhi.FTGO.KitchenService.Domain\Arkhi.FTGO.KitchenService.Domain.csproj" />
+      <ProjectReference Include="..\Arkhi.FTGO.KitchenService.Infra\Arkhi.FTGO.KitchenService.Infra.csproj" />
+    </ItemGroup>
+
+</Project>

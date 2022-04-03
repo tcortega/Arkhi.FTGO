@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net5.0</TargetFramework>
+        <RootNamespace>Arkhi.FTGO.KitchenService.Domain</RootNamespace>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\..\Arkhi.FTGO.Libs\Arkhi.FTGO.Libs.csproj" />
+    </ItemGroup>
+
+</Project>

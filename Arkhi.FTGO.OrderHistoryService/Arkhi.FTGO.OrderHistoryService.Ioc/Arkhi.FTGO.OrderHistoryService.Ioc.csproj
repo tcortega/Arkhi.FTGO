@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net5.0</TargetFramework>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <FrameworkReference Include="Microsoft.AspNetCore.App" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />
+        <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="5.0.2" />
+        <PackageReference Include="Scrutor" Version="3.3.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Arkhi.FTGO.OrderHistoryService.Application\Arkhi.FTGO.OrderHistoryService.Application.csproj" />
+      <ProjectReference Include="..\Arkhi.FTGO.OrderHistoryService.Domain\Arkhi.FTGO.OrderHistoryService.Domain.csproj" />
+      <ProjectReference Include="..\Arkhi.FTGO.OrderHistoryService.Infra\Arkhi.FTGO.OrderHistoryService.Infra.csproj" />
+    </ItemGroup>
+
+</Project>

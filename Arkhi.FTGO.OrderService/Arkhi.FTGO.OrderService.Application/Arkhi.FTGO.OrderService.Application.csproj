@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net5.0</TargetFramework>
+        <RootNamespace>Arkhi.FTGO.OrderService.Application</RootNamespace>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="AutoMapper" Version="11.0.1" />
+      <PackageReference Include="MassTransit" Version="8.0.1" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Arkhi.FTGO.OrderService.Domain\Arkhi.FTGO.OrderService.Domain.csproj" />
+      <ProjectReference Include="..\Arkhi.FTGO.OrderService.Infra\Arkhi.FTGO.OrderService.Infra.csproj" />
+    </ItemGroup>
+
+</Project>

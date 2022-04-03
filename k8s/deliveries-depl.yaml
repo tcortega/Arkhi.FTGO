@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deliveries-depl
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: deliveryservice
+  template:
+    metadata:
+      labels:
+        app: deliveryservice
+    spec:
+      containers:
+        - name: deliveryservice
+          image: tcortega/deliveryservice:latest
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: deliveries-clusterip-srv
+spec:
+  type: ClusterIP
+  selector:
+    app: deliveryservice
+  ports:
+    - name: deliveryservice
+      protocol: TCP
+      port: 80
+      targetPort: 80

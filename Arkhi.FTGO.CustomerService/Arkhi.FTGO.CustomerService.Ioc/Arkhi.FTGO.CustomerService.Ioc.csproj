@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net5.0</TargetFramework>
+        <RootNamespace>Arkhi.FTGO.CustomerService.Ioc</RootNamespace>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <FrameworkReference Include="Microsoft.AspNetCore.App" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />
+        <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="5.0.2" />
+        <PackageReference Include="Scrutor" Version="3.3.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Arkhi.FTGO.CustomerService.Application\Arkhi.FTGO.CustomerService.Application.csproj" />
+      <ProjectReference Include="..\Arkhi.FTGO.CustomerService.Domain\Arkhi.FTGO.CustomerService.Domain.csproj" />
+      <ProjectReference Include="..\Arkhi.FTGO.CustomerService.Infra\Arkhi.FTGO.CustomerService.Infra.csproj" />
+    </ItemGroup>
+
+</Project>

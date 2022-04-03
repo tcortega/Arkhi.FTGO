@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: customers-depl
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: customerservice
+  template:
+    metadata:
+      labels:
+        app: customerservice
+    spec:
+      containers:
+        - name: customerservice
+          image: tcortega/customerservice:latest
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: customers-clusterip-srv
+spec:
+  type: ClusterIP
+  selector:
+    app: customerservice
+  ports:
+    - name: customerservice
+      protocol: TCP
+      port: 80
+      targetPort: 80
