@@ -1,13 +1,6 @@
-﻿FROM mcr.microsoft.com/dotnet/sdk:5.0 AS build
-WORKDIR /app
+﻿FROM mcr.microsoft.com/dotnet/aspnet:5.0-buster-slim
 
-COPY *.csproj ./
-RUN dotnet restore
+COPY bin/Release/net5.0/publish/ App/
+WORKDIR /App
 
-COPY . ./
-RUN dotnet publish -c Release -o out
-
-FROM mcr.microsoft.com/dotnet/aspnet:5.0
-WORKDIR /app
-COPY --from=build /app/out .
-ENTRYPOINT ["dotnet", "Arkhi.FTGO.OrderHistoryService.API"]
+ENTRYPOINT ["dotnet", "Arkhi.FTGO.OrderHistoryService.API.dll"]
